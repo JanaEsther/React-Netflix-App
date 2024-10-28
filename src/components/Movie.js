@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import MovieDeleteButton from './MovieDeleteButton'
 import AllDeleteButton from './AllDeleteButton'
-import MovieReloadButton from './MovieReloadButton'
+import MoviesReloadButton from './MoviesReloadButton'
 import data from '../data'
 import './Movie.css'
 
@@ -14,13 +14,12 @@ const Movie = ()=>{
     });
     setMovieList(filteredMovies);
   }
-     
+
 
   const deleteAllMovies = () => {
     setMovieList([])
   }
 
-  
   const reloadAllMovies = () => {
     setMovieList(data)
   }
@@ -45,9 +44,9 @@ const Movie = ()=>{
         })
         }
       </div>
-      <div>
+      <div className="button-box">
         <AllDeleteButton deleteMovies={deleteAllMovies} />
-        <MovieReloadButton reloadMovies={reloadAllMovies}/>
+        <MoviesReloadButton reloadMovies={reloadAllMovies}/>
       </div>
     </section>
   );
